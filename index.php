@@ -5,14 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
     <title>Service Nuñez</title>
 </head>
 
 <body>
+
+<header>
+<nav class="nav">
+    <div class="container">
+    <div class="desplegable">
+        <a class="fa fa-bars"></a>
+    </div>
+    <div class="menu d-none d-lg-block">
+        <ul>
+            <li>Inicio</li>
+            <li>Categorias</li>
+            <li>Contacto</li>
+            <li>Quienes somos?</li>
+        </ul>
+    </div>
+    <div class="logo">
+        <a class="logo" href="index.php">Service Nuñez</a>
+    </div>
+    <div>
+        <img class="carrito" src="img/carrito.png" alt="Carrito">
+        <img class="usuario" src="img/user.png" alt="Usuario">
+    </div>
+   
+
+
+    </div>
+</nav>
+</header>
+
 
 
 
