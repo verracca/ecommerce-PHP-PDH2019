@@ -8,39 +8,66 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Service Nuñez</title>
 </head>
 
 <body>
 
 <header>
-<nav class="nav">
-    <div class="container">
-    <div class="desplegable">
-        <a class="fa fa-bars"></a>
-    </div>
-    <div class="menu d-none d-lg-block">
-        <ul>
-            <li>Inicio</li>
-            <li>Categorias</li>
-            <li>Contacto</li>
-            <li>Quienes somos?</li>
-        </ul>
-    </div>
-    <div class="logo">
-        <a class="logo" href="index.php">Service Nuñez</a>
-    </div>
-    <div>
-        <img class="carrito" src="images/carrito.png" alt="Carrito">
-        <img class="usuario" src="images/user.png" alt="Usuario">
-    </div>
-   
+<nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: #20c997">
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand font-weight-bold text-white" href="#">Service Nuñez</a>
 
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+ 
+    </ul>
+    <form class="form-inline my-2 my-lg-0 font-weight-bold">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
+      <button class="btn btn-sm btn-light my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div> 
 
-    </div>
+  <div class="img ">
+    <a href="" class="text-decoration-none"><img src="images/carrito.png" alt="Carrito"></a>  
+    <a href="" class="text-decoration-none" data-toggle="modal" data-target="#exampleModalCenter"><img src="images/user.png" alt="Usuario"></a> 
+  </div>
 </nav>
 </header>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Iniciar Sesion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+        <button type="button" class="btn btn-primary">Iniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
