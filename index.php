@@ -8,7 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Service Nuñez</title>
 </head>
 
@@ -32,8 +32,8 @@
         <a class="logo" href="index.php">Service Nuñez</a>
     </div>
     <div>
-        <img class="carrito" src="img/carrito.png" alt="Carrito">
-        <img class="usuario" src="img/user.png" alt="Usuario">
+        <img class="carrito" src="images/carrito.png" alt="Carrito">
+        <img class="usuario" src="images/user.png" alt="Usuario">
     </div>
    
 
@@ -41,6 +41,7 @@
     </div>
 </nav>
 </header>
+
 
 
 
