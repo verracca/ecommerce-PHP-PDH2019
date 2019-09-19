@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-.img a img {
+.imagenesnav img{
     width: 30px;
     height: 30px;
 }
@@ -36,6 +36,14 @@ a {
 .categoriasimg{
   border-radius: 50%;
   width: 100%;
+}
+.buscador{
+margin-right: 20px;
+}
+.modal-content{
+font-family: 'Manjari', sans-serif;
+font-weight: bold;
+background-color: white;
 }
 @media (min-width: 768px){
   .linkscategorias a{

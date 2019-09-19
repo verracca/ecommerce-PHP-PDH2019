@@ -21,22 +21,95 @@
 
         </ul>
         <div class="img d-block d-md-none">
-          <a href="" class="text-decoration-none"><img src="images/carrito.png" alt="Carrito"></a>
-          <a href="" class="text-decoration-none" data-toggle="modal" data-target="#exampleModalCenter"><img src="images/user.png" alt="Usuario"></a>
+          <a href="" class="text-decoration-none imagenesnav"><img src="images/carrito.png" alt="Carrito"></a>
+          <div class="btn-group text-decoration-none imagenesnav">
+           <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="imagenUsuario" src="images/user.png" alt="Usuario"></button>
+          <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Registrarme</a>
+          </div>
+        </div>
         </div>
       </div>
-      <form class="form-inline my-2 my-lg-0 font-weight-bold d-none d-lg-block">
+      <form class="form-inline my-2 my-lg-0 font-weight-bold d-none d-lg-block buscador">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
-        <button class="btn btn-sm btn-light my-2 my-sm-0" type="submit">Buscar</button>
+        <button class="btn btn-sm btn-light my-2 my-sm-0 " type="submit">Buscar</button>
       </form>
       <div class="img d-none d-md-block">
-        <a href="" class="text-decoration-none"><img src="images/carrito.png" alt="Carrito"></a>
-        <a href="" class="text-decoration-none" data-toggle="modal" data-target="#exampleModalCenter"><img src="images/user.png" alt="Usuario"></a>
+        <a href="" class="text-decoration-none imagenesnav"><img src="images/carrito.png" alt="Carrito"></a>
+        <div class="btn-group text-decoration-none imagenesnav">
+         <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="imagenUsuario" src="images/user.png" alt="Usuario"></button>
+        <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
+          <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#"> Registrarme </a>
+        </div>
+      </div>
       </div>
       <span class="img">
         <a href="" class="text-decoration-none d-block d-lg-none"><img src="images/busqueda.png" alt="Carrito"></a>
       </span>
     </nav>
   </header>
-
-
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <form  class="container shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombre@ejemplo.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword42">Confirmar contraseña </label>
+              <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+              <button type="button" class="btn btn-danger">Iniciar</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <form class="container shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="form-row ">
+              <div class="form-group  col-sm-6 col-md-12 col-lg-6 ">
+                <label for="inputName">Nombre</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+              </div>
+              <div class="form-group  col-sm-6 col-md-12 col-lg-6">
+                <label for="input2Name">Apellido</label>
+                <input type="text" class="form-control" id="input2Name" placeholder="Apellido">
+              </div>
+              <div class="form-group col-sm-6 col-md-12 col-lg-12">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@ejemplo.com">
+              </div>
+              <div class="form-group  col-sm-6 col-md-12 col-lg-6">
+                <label for="inputPassword4">Contraseña</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+              </div>
+            <div class="form-group  col-sm-6 col-md-12 col-lg-6">
+              <label for="inputPassword42">Confirmar contraseña </label>
+              <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña">
+            </div>
+            <button  type="submit" class="btn btn-danger">Registrarme</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  </div>
