@@ -18,16 +18,22 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contacto</a>
           </li>
-
+          <li class="nav-item d-sm-block d-lg-none">
+            <a class="dropdown-item nav-link" data-toggle="modal" data-target="#exampleModalCenter"href="#">Iniciar sesión</a>
+          </li>
+          <li class="nav-item d-sm-block d-lg-none">
+            <a class="dropdown-item nav-link" data-toggle="modal" data-target="#exampleModalCenter2"href="#">Registrarme</a>
+          </li>
         </ul>
-        <div class="img d-block d-md-none">
-          <a href="" class="text-decoration-none imagenesnav"><img src="images/carrito.png" alt="Carrito"></a>
+        <div class="img d-block d-md-none d-sm-none d-xs-none ">
+          <a href="" class="text-decoration-none imagenesnav  d-lg-block "><img src="images/carrito.png" alt="Carrito"></a>
           <div class="btn-group text-decoration-none imagenesnav">
-           <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="imagenUsuario" src="images/user.png" alt="Usuario"></button>
-          <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
-            <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Registrarme</a>
-          </div>
+           <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <img  src="images/user.png" alt="Usuario"></button>
+            <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
+              <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Registrarme</a>
+            </div>
         </div>
         </div>
       </div>
@@ -38,7 +44,8 @@
       <div class="img d-none d-md-block">
         <a href="" class="text-decoration-none imagenesnav"><img src="images/carrito.png" alt="Carrito"></a>
         <div class="btn-group text-decoration-none imagenesnav">
-         <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="imagenUsuario" src="images/user.png" alt="Usuario"></button>
+         <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none d-none d-md-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <img class="imagenesnav d-lg-block d-md-none" src="images/user.png" alt="Usuario"></button>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
           <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
           <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#"> Registrarme </a>
@@ -46,7 +53,7 @@
       </div>
       </div>
       <span class="img">
-        <a href="" class="text-decoration-none d-block d-lg-none"><img src="images/busqueda.png" alt="Carrito"></a>
+        <a href="" class="text-decoration-none d-block d-lg-none"><img src="images/busqueda.png" alt="Busqueda"></a>
       </span>
     </nav>
   </header>
@@ -69,7 +76,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
-              <button type="button" class="btn btn-danger">Iniciar</button>
+              <button type="button" class="btn btn-primary">Iniciar</button>
             </div>
           </form>
       </div>
@@ -104,7 +111,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
-              <button type="button" class="btn btn-danger">Registrarme</button>
+              <button type="button" class="btn btn-primary">Registrarme</button>
             </div>
             </div>
           </form>
