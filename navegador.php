@@ -102,7 +102,10 @@
               <label for="inputPassword42">Confirmar contraseña </label>
               <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña">
             </div>
-            <button  type="submit" class="btn btn-danger">Registrarme</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+              <button type="button" class="btn btn-danger">Registrarme</button>
+            </div>
             </div>
           </form>
       </div>
