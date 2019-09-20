@@ -45,6 +45,71 @@ font-family: 'Manjari', sans-serif;
 font-weight: bold;
 background-color: white;
 }
+
+
+/* FOOTER */
+
+
+.redesociales {
+overflow-x: hidden;
+float: right;
+margin-right: 20px;
+
+}
+
+.iconos {
+display: inline-flex;
+flex-direction: row;
+}
+
+.fa-instagram {
+margin: 4px;
+font-size: 30px;
+  color: #DC3545;
+
+}
+
+.fa-facebook-square {
+  margin: 4px;
+  font-size: 30px;
+  color: #DC3545;
+}
+
+.fa-twitter-square {
+  margin: 4px;
+  font-size: 30px;
+    color: #DC3545;
+}
+
+.form-inline {
+margin-left: 8px;
+}
+
+li{
+
+list-style: none; }
+
+.list-group-horizontal {
+margin-left: 20px;;
+}
+.list-group-horizontal li {
+font-size: 11px;
+
+}
+
+.marcaregistrada {
+color: grey;
+font-size: 11px;
+}
+
+
+
+
+
+
+
+/*TERMINA FOOTER */
+
 @media (min-width: 768px){
   .linkscategorias a{
     width: 28%;
