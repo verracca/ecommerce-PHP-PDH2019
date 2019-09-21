@@ -1,3 +1,5 @@
+/*Global*/
+
 * {
     box-sizing: border-box;
 }
@@ -15,6 +17,7 @@ li {
 a {
     text-decoration: none;
 }
+/*nav*/
 
 .imagenesnav img{
     width: 30px;
@@ -25,18 +28,6 @@ a {
     width: 40px;
     height: 40px;
 }
-.carouselimg{
-  height: 300px
-}
-/*Categorias*/
-.linkscategorias a{
-  width: 45%;
-  margin-bottom: 2%;
-}
-.categoriasimg{
-  border-radius: 50%;
-  width: 100%;
-}
 .buscador{
 margin-right: 20px;
 }
@@ -46,20 +37,35 @@ font-weight: bold;
 background-color: white;
 }
 
+/*Categorias*/
+.categorias{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.linkscategorias a{
+  width: 45%;
+  margin-bottom: 2%;
+}
+.categoriasimg{
+  border-radius: 50%;
+  width: 100%;
+}
+
+
 
 /* FOOTER */
-
+footer{
+  margin-top: 50px;
+  background-color: #ccc;
+  padding-top: 20px
+}
 
 .redesociales {
-overflow-x: hidden;
-float: right;
 margin-right: 20px;
-
 }
 
 .iconos {
 display: inline-flex;
-flex-direction: row;
 }
 
 .fa-instagram {
@@ -85,24 +91,33 @@ font-size: 30px;
 margin-left: 8px;
 }
 
-li{
-
-list-style: none; }
-
-.list-group-horizontal {
-margin-left: 20px;;
-}
-.list-group-horizontal li {
-font-size: 11px;
-
-}
-
 .marcaregistrada {
 color: grey;
 font-size: 11px;
 }
+.footer{
+  padding-top: 7px
+}
+.listafooter{
+  text-decoration: none;
+  color: inherit;
+}
+.footer ul
+{
+    margin: 0;
+    padding: 0;
+}
 
+.footer ul li
+{
+    list-style-type: none;
+    display: inline;
+}
 
+.footer li:not(:first-child):before {
+    content: " | ";
+    margin-left: 5px;
+}
 
 
 

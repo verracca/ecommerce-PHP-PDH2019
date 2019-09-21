@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
   <title>Service Nuñez</title>
+  <link rel="SHORTCUT ICON" href="images/logomini.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -23,18 +24,18 @@ include "./navegador.php";
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100 carouselimg" src="images/slider-11.png" alt="First slide">
+          <img class="d-block w-100 carouselimg" src="images/Slider+chico-13.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 carouselimg" src="images/slider-11.png" alt="Second slide">
+          <img class="d-block w-100 carouselimg" src="images/Slider+chico-12.jpg" alt="Second slide">
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
           <img class="d-block w-100 carouselimg" src="images/slider-11.png" alt="Third slide">
-        </div>
+        </div> -->
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,8 +47,8 @@ include "./navegador.php";
       </a>
     </div>
   </section>
-  <section>
-    <h1 class="text-center">CATEGORIAS</h1>
+  <h1 class="text-center">CATEGORIAS</h1>
+  <section class="categorias">
     <div class="d-flex flex-wrap justify-content-around linkscategorias">
       <a href="#"><img src="images/Categoria amarillo-05.png" alt="Heladeras" class="categoriasimg"></a>
       <a href="#"><img src="images/Categoria amarillo-06.png" alt="Heladeras" class="categoriasimg"></a>
@@ -62,7 +63,8 @@ include "./navegador.php";
 
 
 
-
+<br>
+<br>
   <?php
   include "./footer.php";
   ?>
