@@ -28,17 +28,6 @@
           <a class="dropdown-item nav-link"href="#">Carrito</a>
         </li>
       </ul>
-      <!-- <div class="img d-none d-md-block d-lg-block">
-        <a href="" class="text-decoration-none imagenesnav d-lg-block "><img src="images/carrito.png" alt="Carrito"></a>
-        <div class="btn-group text-decoration-none imagenesnav">
-          <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="images/user.png" alt="Usuario"></button>
-          <div class="dropdown-menu dropdown-menu-sm-left" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
-            <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Registrarme</a>
-          </div>
-        </div>
-      </div> -->
     </div>
     <form class="form-inline my-2 my-lg-0 font-weight-bold d-none d-lg-block buscador">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
