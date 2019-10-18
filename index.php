@@ -10,19 +10,21 @@ if(usuarioLogueado()){
   exit;
 }
 
-$errores = [];
+$erroresRegistro = [];
+$erroresLogin = [];
+
 
 
 
 if(isset($_POST["retypePassword"])){
-  $errores = validarRegistro($_POST);
+  $erroresRegistro = validarRegistro($_POST);
 //El control lo hacemos en el campo input.
   $emailOk = trim($_POST['email']);
   $nombreOk = trim($_POST['nombre']);
   $apellidoOk = trim($_POST['apellido']);
   // var_dump($errores, $_POST, $nombreOk, isset($_POST["retypePassword"]));
 
-  if(!$errores){
+  if(!$erroresRegistro){
     $usuario = crearUsuario();
     // var_dump($usuario);
     // exit;
@@ -42,10 +44,9 @@ if(isset($_POST["retypePassword"])){
 
 }
 if($_POST && !isset($_POST["retypePassword"])){
-  $errores = validarLogin($_POST);
-    var_dump($errores, $_POST);
+  $erroresLogin = validarLogin($_POST);
 
-  if(!$errores){
+  if(!$erroresLogin){
     loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
 
     header("Location:index.php");
