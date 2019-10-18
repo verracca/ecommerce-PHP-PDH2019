@@ -65,10 +65,20 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="nombre@ejemplo.com" name="email">
+            <small id="emailHelp" class="form-text text-danger">
+            <?php if(isset($errores['email'])) :?>
+              <?= $errores['email'] ?>
+            <?php endif ?>
+            </small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
             <input type="password" class="form-control" id="InputPassword1" placeholder="Contraseña"name="password">
+            <small id="emailHelp" class="form-text text-danger">
+            <?php if(isset($errores['password'])) :?>
+              <?= $errores['password'] ?>
+            <?php endif ?>
+            </small>
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="Check1"name="recordarme">
