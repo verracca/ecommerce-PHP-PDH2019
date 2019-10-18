@@ -71,7 +71,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
-            <button type="button" class="btn btn-primary">Iniciar</button>
+            <button type="submit" class="btn btn-primary">Iniciar</button>
           </div>
         </form>
       </div>
@@ -82,31 +82,40 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <form class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <form class="container shadow-lg p-3 mb-5 bg-white rounded" action="index.php" method="post" enctype="multipart/form-data">
           <div class="form-row ">
             <div class="form-group  col-sm-6 col-md-12 col-lg-6 ">
               <label for="inputName">Nombre</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+              <input type="text" class="form-control" id="inputName" placeholder="Nombre" name = "nombre">
             </div>
             <div class="form-group  col-sm-6 col-md-12 col-lg-6">
               <label for="input2Name">Apellido</label>
-              <input type="text" class="form-control" id="input2Name" placeholder="Apellido">
+              <input type="text" class="form-control" id="input2Name" placeholder="Apellido" name ="apellido" >
             </div>
             <div class="form-group col-sm-6 col-md-12 col-lg-12">
               <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@ejemplo.com">
+              <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@ejemplo.com" name = "email">
             </div>
             <div class="form-group  col-sm-6 col-md-12 col-lg-6">
               <label for="inputPassword4">Contraseña</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña" name = "password">
             </div>
             <div class="form-group  col-sm-6 col-md-12 col-lg-6">
               <label for="inputPassword42">Confirmar contraseña </label>
-              <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña">
+              <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña" name= "retypePassword">
+            </div>
+            <div class="form-group">
+              <label for="avatar">Imagen de perfil</label>
+              <input name="avatar" type="file" id="avatar" class="form-control-file">
+              <small id="emailHelp" class="form-text text-danger">
+                <?php if(isset($errores['avatar'])) :?>
+                  <?= $errores['avatar'] ?>
+                <?php endif ?>
+              </small>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
-              <button type="button" class="btn btn-primary">Registrarme</button>
+              <button type="submit" class="btn btn-primary">Registrarme</button>
             </div>
           </div>
         </form>

@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./css/styles.css">
   <title>Service Nuñez</title>
   <link rel="SHORTCUT ICON" href="images/logomini.jpg" type="image/x-icon">
@@ -18,6 +20,44 @@
 <?php
 include "./navegador.php";
 ?>
+<?php
+include "functions.php";
+
+if(usuarioLogueado()){
+  header("Location:index.php");
+  exit;
+}
+
+$errores = [];
+$userNameOk = "";
+$emailOk = "";
+
+if($_POST){
+  $errores = validarRegistro($_POST);
+  var_dump($_POST, $errores);
+//El control lo hacemos en el campo input.
+  $emailOk = trim($_POST['email']);
+
+
+  if(!$errores){
+    $usuario = crearUsuario();
+    // var_dump($usuario);
+    // exit;
+    guardarUsuario($usuario); //Guardaremos en un archivo .json.–
+
+    // var_dump($_FILES);
+    // exit;
+    $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
+    move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/". $_POST['nombre']. "." . $ext);
+
+    loguearUsuario($_POST['email']);
+
+    // header("Location:index.php"); //Redirecciona.
+    // exit; //Siempre después de una redirección.
+  }
+
+}
+  ?>
 
   <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

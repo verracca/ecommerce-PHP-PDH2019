@@ -1,0 +1,11 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Juan",
+            "apellido": "Guzman",
+            "email": "juan@dh.com",
+            "password": "$2y$10$tGTbpYIem7nBHtVXyzSG8ukCyS9kmb3yJVbgH3rezStE9QL0FpuMC"
+        }
+    ]
+}
