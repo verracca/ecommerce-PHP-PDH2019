@@ -18,12 +18,15 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contacto</a>
         </li>
+
+        <!-- Poner Condicional -->
         <li class="nav-item d-sm-block d-lg-none">
           <a class="dropdown-item nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
         </li>
         <li class="nav-item d-sm-block d-lg-none">
           <a class="dropdown-item nav-link" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Registrarme</a>
         </li>
+        <!-- Termina condicional -->
         <li class="nav-item d-sm-block d-md-none d-lg-none">
           <a class="dropdown-item nav-link"href="#">Carrito</a>
         </li>
@@ -39,8 +42,10 @@
         <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img class="imagenesnav d-lg-block d-md-none" src="images/user.png" alt="Usuario"></button>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
+          <!-- Poner condicional -->
           <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
           <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#"> Registrarme </a>
+          <!-- termina condicional -->
         </div>
       </div>
     </div>
@@ -56,17 +61,17 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <form class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <form class="container shadow-lg p-3 mb-5 bg-white rounded" name="login" action="index.php" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="nombre@ejemplo.com">
+            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="nombre@ejemplo.com" name="email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control" id="InputPassword1" placeholder="Contraseña">
+            <input type="password" class="form-control" id="InputPassword1" placeholder="Contraseña"name="password">
           </div>
           <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="Check1">
+            <input type="checkbox" class="form-check-input" id="Check1"name="recordarme">
             <label class="form-check-label" for="exampleCheck1">Recordarme</label>
           </div>
           <div class="modal-footer">
@@ -82,27 +87,64 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <form class="container shadow-lg p-3 mb-5 bg-white rounded" action="index.php" method="post" enctype="multipart/form-data">
+        <form class="container shadow-lg p-3 mb-5 bg-white rounded" action="index.php" method="post" enctype="multipart/form-data" name="registro">
           <div class="form-row ">
             <div class="form-group  col-sm-6 col-md-12 col-lg-6 ">
               <label for="inputName">Nombre</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Nombre" name = "nombre">
+              <?php if (!isset($errores["nombre"])):?>
+                <input type="text" class="form-control" id="inputName" placeholder="Nombre" name = "nombre" value="<?= $nombreOk ?>">
+              <?php else: ?>
+              <input type="text" class="form-control" id="inputName" placeholder="Nombre" name = "nombre" value="">
+            <?php endif ?>
+            <small id="emailHelp" class="form-text text-danger">
+            <?php if(isset($errores['nombre'])) :?>
+              <?= $errores['nombre'] ?>
+            <?php endif ?>
+            </small>
             </div>
             <div class="form-group  col-sm-6 col-md-12 col-lg-6">
               <label for="input2Name">Apellido</label>
+              <?php if (!isset($errores["nombre"])):?>
+              <input type="text" class="form-control" id="input2Name" placeholder="Apellido" name ="apellido" value= "<?= $apellidoOk ?>" >
+              <?php else: ?>
               <input type="text" class="form-control" id="input2Name" placeholder="Apellido" name ="apellido" >
+            <?php endif ?>
+            <small id="emailHelp" class="form-text text-danger">
+            <?php if(isset($errores['apellido'])) :?>
+              <?= $errores['apellido'] ?>
+            <?php endif ?>
+            </small>
             </div>
             <div class="form-group col-sm-6 col-md-12 col-lg-12">
               <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@ejemplo.com" name = "email">
+              <?php if (!isset($errores["email"])):?>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@ejemplo.com" name ="email" value="<?= $emailOk  ?>">
+              <?php else: ?>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="nombre@ejemplo.com" name ="email">
+            <?php endif ?>
+            <small id="emailHelp" class="form-text text-danger">
+            <?php if(isset($errores['email'])) :?>
+              <?= $errores['email'] ?>
+            <?php endif ?>
+            </small>
             </div>
             <div class="form-group  col-sm-6 col-md-12 col-lg-6">
               <label for="inputPassword4">Contraseña</label>
               <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña" name = "password">
+              <small id="emailHelp" class="form-text text-danger">
+              <?php if(isset($errores['password'])) :?>
+                <?= $errores['password'] ?>
+              <?php endif ?>
+              </small>
             </div>
             <div class="form-group  col-sm-6 col-md-12 col-lg-6">
               <label for="inputPassword42">Confirmar contraseña </label>
-              <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña" name= "retypePassword">
+              <input type="password" class="form-control" id="inputPassword42" placeholder="Confirmar contraseña" name="retypePassword">
+              <small id="emailHelp" class="form-text text-danger">
+                <?php if(isset($errores['retypePassword'])) :?>
+                  <?= $errores['retypePassword'] ?>
+                <?php endif ?>
+              </small>
             </div>
             <div class="form-group">
               <label for="avatar">Imagen de perfil</label>

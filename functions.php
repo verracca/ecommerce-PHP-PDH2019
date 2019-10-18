@@ -21,7 +21,7 @@ function validarRegistro($datos){
   }
   // Validar apellido
   if(strlen($datosFinales['apellido']) == 0){
-    $errores['Apellido'] = "El campo es obligatorio.";
+    $errores['apellido'] = "El campo es obligatorio.";
   } else if( !ctype_alpha($datosFinales['apellido'])){
     $errores['apellido'] = "Por favor ingrese caracteres alfabéticos sin espacios.";
   }

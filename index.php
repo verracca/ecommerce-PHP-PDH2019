@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./css/styles.css">
-  <title>Service Nuñez</title>
-  <link rel="SHORTCUT ICON" href="images/logomini.jpg" type="image/x-icon">
-</head>
-
-<body>
-
-<?php
-include "./navegador.php";
-?>
 <?php
 include "functions.php";
+
+$nombreOk = "";
+$emailOk = "";
+$apellidoOk = "";
 
 if(usuarioLogueado()){
   header("Location:index.php");
@@ -29,15 +11,16 @@ if(usuarioLogueado()){
 }
 
 $errores = [];
-$userNameOk = "";
-$emailOk = "";
 
-if($_POST){
+
+
+if(isset($_POST["retypePassword"])){
   $errores = validarRegistro($_POST);
-  var_dump($_POST, $errores);
 //El control lo hacemos en el campo input.
   $emailOk = trim($_POST['email']);
-
+  $nombreOk = trim($_POST['nombre']);
+  $apellidoOk = trim($_POST['apellido']);
+  // var_dump($errores, $_POST, $nombreOk, isset($_POST["retypePassword"]));
 
   if(!$errores){
     $usuario = crearUsuario();
@@ -56,9 +39,41 @@ if($_POST){
     // exit; //Siempre después de una redirección.
   }
 
+
+}
+if($_POST && !isset($_POST["retypePassword"])){
+  $errores = validarLogin($_POST);
+    var_dump($errores, $_POST);
+
+  if(!$errores){
+    loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
+
+    header("Location:index.php");
+    exit; //Siempre después de una redirección.
+
+  }
 }
   ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Service Nuñez</title>
+  <link rel="SHORTCUT ICON" href="images/logomini.jpg" type="image/x-icon">
+</head>
+
+<body>
+  <?php include "./navegador.php"; ?>
   <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
