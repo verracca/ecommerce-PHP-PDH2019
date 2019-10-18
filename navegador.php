@@ -19,13 +19,22 @@
           <a class="nav-link" href="#">Contacto</a>
         </li>
 
-        <!-- Poner Condicional -->
+        <?php if (usuarioLogueado()): ?>
+          <li class="nav-item d-sm-block d-lg-none">
+            <a class="dropdown-item nav-link" href="logout.php">Cerrar sesión</a>
+          </li>
+          <li class="nav-item d-sm-block d-lg-none">
+            <img class="avatar" src="avatar/<?= $usuario['nombre'] ?>.jpg" alt="<?= $usuario['nombre'] ?>">
+            <span>Hola: <?= $usuario['nombre'] ?></span>
+          </li>
+        <?php else :?>
         <li class="nav-item d-sm-block d-lg-none">
           <a class="dropdown-item nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
         </li>
         <li class="nav-item d-sm-block d-lg-none">
           <a class="dropdown-item nav-link" data-toggle="modal" data-target="#exampleModalCenter2" href="#">Registrarme</a>
         </li>
+      <?php endif ?>
         <!-- Termina condicional -->
         <li class="nav-item d-sm-block d-md-none d-lg-none">
           <a class="dropdown-item nav-link"href="#">Carrito</a>
@@ -42,9 +51,16 @@
         <button id="btnGroupDrop1" type="button" class="btn btn-link text-decoration-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img class="imagenesnav d-lg-block d-md-none" src="images/user.png" alt="Usuario"></button>
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
-          <!-- Poner condicional -->
+          <?php if (usuarioLogueado()): ?>
+            <li class="dropdown-item">
+              <img class="avatar" src="avatar/<?= $usuario['nombre'] ?>.jpg" alt="<?= $usuario['nombre'] ?>">
+              <span>Hola <?= $usuario['nombre'] ?></span>
+            </li>
+          <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
+        <?php else: ?>
           <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter" href="#">Iniciar sesión</a>
           <a class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter2" href="#"> Registrarme </a>
+          <?php endif; ?>
           <!-- termina condicional -->
         </div>
       </div>

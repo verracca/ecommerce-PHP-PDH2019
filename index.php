@@ -5,10 +5,10 @@ $nombreOk = "";
 $emailOk = "";
 $apellidoOk = "";
 
-if(usuarioLogueado()){
-  header("Location:index.php");
-  exit;
-}
+// if(usuarioLogueado()){
+//   header("Location:index.php");
+//   exit;
+// }
 
 $erroresRegistro = [];
 $erroresLogin = [];
@@ -45,7 +45,6 @@ if(isset($_POST["retypePassword"])){
 }
 if($_POST && !isset($_POST["retypePassword"])){
   $erroresLogin = validarLogin($_POST);
-
   if(!$erroresLogin){
     loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
 
@@ -53,6 +52,9 @@ if($_POST && !isset($_POST["retypePassword"])){
     exit; //Siempre después de una redirección.
 
   }
+}
+if (usuarioLogueado()) {
+  $usuario = buscarUsuarioPorEmail($_SESSION['email']);  // code...
 }
   ?>
 

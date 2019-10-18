@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 function validarRegistro($datos){
   $errores = [];
@@ -141,10 +141,10 @@ function validarLogin($datos){
 function loguearUsuario($email){
   $_SESSION['email'] = $email; //Nos falta iniciar la sesión. Colocamos session_start() al inicio de este archivo.
 
-  if(isset($_POST['rememberMe'])){
-    //Si el usuario tildó "recordarme" vamos a crear la cookie y guardar su email.
-    setcookie("email", $email, time()+ 60 * 60);
-  }
+  // if(isset($_POST['rememberMe'])){
+  //   //Si el usuario tildó "recordarme" vamos a crear la cookie y guardar su email.
+  //   setcookie("email", $email, time()+ 60 * 60);
+  // }
 }
 
 function usuarioLogueado(){

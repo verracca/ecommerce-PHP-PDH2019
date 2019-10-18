@@ -18,7 +18,12 @@ a {
     text-decoration: none;
 }
 /*nav*/
-
+.avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  
+}
 .imagenesnav img{
     width: 30px;
     height: 30px;
