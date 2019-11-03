@@ -24,7 +24,7 @@
             <a class="dropdown-item nav-link" href="logout.php">Cerrar sesión</a>
           </li>
           <li class="nav-item d-sm-block d-lg-none">
-            <img class="avatar" src="avatar/<?= $usuario['nombre'] ?>.jpg" alt="<?= $usuario['nombre'] ?>">
+            <img class="avatar" src="<?= $usuario['avatar'] ?>" alt="<?= $usuario['nombre'] ?>">
             <span>Hola: <?= $usuario['nombre'] ?></span>
           </li>
         <?php else : ?>

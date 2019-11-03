@@ -30,6 +30,7 @@ class DbJson
             "apellido" => $user->getApellido(),
             "email" => $user->getEmail(),
             "password" => $user->getPassword(),
+            "avatar" => $user->getAvatar(),
         ];
 
         $usuarios['usuarios'][] = $usuarioEnArray;

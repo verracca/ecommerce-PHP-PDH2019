@@ -7,8 +7,9 @@ class Usuario
     private $apellido;
     private $email;
     private $password;
+    private $avatar;
 
-    function __construct(array $datos)
+    function __construct(array $datos, $avatar)
     {
         global $json;
 
@@ -22,6 +23,7 @@ class Usuario
         $this->nombre = $datos['nombre'];
         $this->apellido = $datos['apellido'];
         $this->email = $datos['email'];
+        $this->avatar = $avatar;
     }
 
 
@@ -45,5 +47,9 @@ class Usuario
     public function getPassword()
     {
         return $this->password;
+    }
+    public function getAvatar()
+    {
+        return $this->avatar;
     }
 }

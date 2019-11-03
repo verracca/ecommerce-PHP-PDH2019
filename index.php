@@ -27,13 +27,14 @@ if (isset($_POST["retypePassword"])) {
   // var_dump($errores, $_POST, $nombreOk, isset($_POST["retypePassword"]));
 
   if (!$erroresRegistro) {
-    $usuario = new Usuario($_POST);
-    $json->guardarUsuario($usuario); //Guardaremos en un archivo .json.–
-
     // var_dump($_FILES);
     // exit;
     $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
-    move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/" . $_POST['nombre'] . "." . $ext);
+    $nombreAvatar = "avatar/" . $_POST['nombre'] . "." . $ext;
+    move_uploaded_file($_FILES["avatar"]['tmp_name'], $nombreAvatar);
+
+    $usuario = new Usuario($_POST, $nombreAvatar);
+    $json->guardarUsuario($usuario); //Guardaremos en un archivo .json.–
 
     $auth->loguearUsuario($_POST['email']);
 
