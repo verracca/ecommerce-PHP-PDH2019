@@ -34,8 +34,8 @@ class DbJson
 
         $usuarios['usuarios'][] = $usuarioEnArray;
 
-        $json = json_encode($usuarios, JSON_PRETTY_PRINT);
-        file_put_contents("db.json", $json);
+        $this->json = json_encode($usuarios, JSON_PRETTY_PRINT);
+        file_put_contents("db.json", $this->json);
     }
 
 
