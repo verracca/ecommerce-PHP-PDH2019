@@ -1,5 +1,7 @@
 <?php
 include "functions.php";
+include "init.php";
+
 
 $nombreOk = "";
 $emailOk = "";
@@ -16,47 +18,43 @@ $erroresLogin = [];
 
 
 
-if(isset($_POST["retypePassword"])){
-  $erroresRegistro = validarRegistro($_POST);
-//El control lo hacemos en el campo input.
+if (isset($_POST["retypePassword"])) {
+  $erroresRegistro = Validador::validarRegistro($_POST);
+  //El control lo hacemos en el campo input.
   $emailOk = trim($_POST['email']);
   $nombreOk = trim($_POST['nombre']);
   $apellidoOk = trim($_POST['apellido']);
   // var_dump($errores, $_POST, $nombreOk, isset($_POST["retypePassword"]));
 
-  if(!$erroresRegistro){
-    $usuario = crearUsuario();
-    // var_dump($usuario);
-    // exit;
-    guardarUsuario($usuario); //Guardaremos en un archivo .json.–
+  if (!$erroresRegistro) {
+    $usuario = new Usuario($_POST);
+    $json->guardarUsuario($usuario); //Guardaremos en un archivo .json.–
 
     // var_dump($_FILES);
     // exit;
     $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
-    move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/". $_POST['nombre']. "." . $ext);
+    move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/" . $_POST['nombre'] . "." . $ext);
 
-    loguearUsuario($_POST['email']);
+    $auth->loguearUsuario($_POST['email']);
 
     // header("Location:index.php"); //Redirecciona.
     // exit; //Siempre después de una redirección.
   }
-
-
 }
-if($_POST && !isset($_POST["retypePassword"])){
-  $erroresLogin = validarLogin($_POST);
-  if(!$erroresLogin){
-    loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
+if ($_POST && !isset($_POST["retypePassword"])) {
+  $erroresLogin = Validador::validarLogin($_POST);
+  if (!$erroresLogin) {
+    $auth->loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
 
     header("Location:index.php");
     exit; //Siempre después de una redirección.
 
   }
 }
-if (usuarioLogueado()) {
-  $usuario = buscarUsuarioPorEmail($_SESSION['email']);  // code...
+if ($auth->usuarioLogueado()) {
+  $usuario = $json->buscarUsuarioPorEmail($_SESSION['email']);  // code...
 }
-  ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -117,8 +115,8 @@ if (usuarioLogueado()) {
 
 
 
-<br>
-<br>
+  <br>
+  <br>
   <?php
   include "./footer.php";
   ?>
