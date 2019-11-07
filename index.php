@@ -34,7 +34,7 @@ if (isset($_POST["retypePassword"])) {
     move_uploaded_file($_FILES["avatar"]['tmp_name'], $nombreAvatar);
 
     $usuario = new Usuario($_POST, $nombreAvatar);
-    $json->guardarUsuario($usuario); //Guardaremos en un archivo .json.–
+    $db->guardarUsuario($usuario); //Guardaremos en un archivo .json.–
 
     $auth->loguearUsuario($_POST['email']);
 
@@ -53,7 +53,7 @@ if ($_POST && !isset($_POST["retypePassword"])) {
   }
 }
 if ($auth->usuarioLogueado()) {
-  $usuario = $json->buscarUsuarioPorEmail($_SESSION['email']);  // code...
+  $usuario = $db->buscarUsuarioPorEmail($_SESSION['email']);  // code...
 }
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 
-class DbJson
+class DbJson extends Db 
 {
     private $json;
 

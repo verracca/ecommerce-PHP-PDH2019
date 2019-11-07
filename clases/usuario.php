@@ -11,13 +11,13 @@ class Usuario
 
     function __construct(array $datos, $avatar)
     {
-        global $json;
+        global $db;
 
         if (isset($datos['id'])) {
             $this->id = $datos['id'];
             $this->password = $datos['password'];
         } else {
-            $this->id = $json->nextId();
+            $this->id = $db->nextId();
             $this->password = password_hash($datos['password'], PASSWORD_DEFAULT);
         }
         $this->nombre = $datos['nombre'];
