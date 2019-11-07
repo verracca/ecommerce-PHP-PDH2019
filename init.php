@@ -9,5 +9,6 @@ include "clases/validador.php";
 
 $data = "db.json";
 $auth = new Auth;
-/*$db = new DbJson($data);*/
-$db = new DbMysql();
+// $db = new DbJson($data);
+$db = new DbMysql()
+?>

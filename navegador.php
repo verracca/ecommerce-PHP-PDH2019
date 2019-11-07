@@ -24,8 +24,8 @@
             <a class="dropdown-item nav-link" href="logout.php">Cerrar sesión</a>
           </li>
           <li class="nav-item d-sm-block d-lg-none">
-            <img class="avatar" src="<?= $usuario['avatar'] ?>" alt="<?= $usuario['nombre'] ?>">
-            <span>Hola: <?= $usuario['nombre'] ?></span>
+            <img class="avatar" src="<?= $usuario->getAvatar() ?>" alt="<?= $usuario->getNombre() ?>">
+            <span>Hola: <?= $usuario->getNombre() ?></span>
           </li>
         <?php else : ?>
           <li class="nav-item d-sm-block d-lg-none">
@@ -53,8 +53,8 @@
         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="btnGroupDrop1">
           <?php if ($auth->usuarioLogueado()) : ?>
             <li class="dropdown-item">
-              <img class="avatar" src="avatar/<?= $usuario['nombre'] ?>.jpg" alt="<?= $usuario['nombre'] ?>">
-              <span>Hola <?= $usuario['nombre'] ?></span>
+              <img class="avatar" src="<?= $usuario->getAvatar() ?>" alt="<?= $usuario->getNombre() ?>">
+              <span>Hola <?= $usuario->getNombre() ?></span>
             </li>
             <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
           <?php else : ?>

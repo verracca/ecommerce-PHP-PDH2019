@@ -17,7 +17,6 @@ class Usuario
             $this->id = $datos['id'];
             $this->password = $datos['password'];
         } else {
-            $this->id = $db->nextId();
             $this->password = password_hash($datos['password'], PASSWORD_DEFAULT);
         }
         $this->nombre = $datos['nombre'];

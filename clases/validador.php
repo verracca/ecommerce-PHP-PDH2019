@@ -94,7 +94,7 @@ class Validador
             $errores['password'] = "El campo es obligatorio.";
         } else {
             $usuario = $db->buscarUsuarioPorEmail($datos['email']);
-            if (!password_verify($datos['password'], $usuario['password'])) {
+            if (!password_verify($datos['password'], $usuario->getPassword())) {
                 $errores['password'] = "La contraseña es incorrecta.";
             }
         }

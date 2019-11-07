@@ -1,6 +1,6 @@
 <?php
 
-class DbJson extends Db 
+class DbJson extends Db
 {
     private $json;
 
@@ -10,7 +10,7 @@ class DbJson extends Db
         $this->json = file_get_contents($file);
     }
 
-    public function nextId()
+    private function nextId()
     {
         $usuarios = json_decode($this->json, true);
 
@@ -23,9 +23,14 @@ class DbJson extends Db
     public function guardarUsuario($user)
     {
         $usuarios = json_decode($this->json, true);
+        $id = $user->getId();
+
+        if (!isset($id)) {
+            $id = $this->nextId();
+        }
 
         $usuarioEnArray = [
-            "id" => $user->getId(),
+            "id" => $id,
             "nombre" => $user->getNombre(),
             "apellido" => $user->getApellido(),
             "email" => $user->getEmail(),
@@ -46,7 +51,7 @@ class DbJson extends Db
 
         foreach ($usuarios['usuarios'] as $usuario) {
             if ($usuario['email'] === $email) {
-                return $usuario;
+                return new Usuario($usuario, $usuario['avatar']);
             }
         }
         return null;
